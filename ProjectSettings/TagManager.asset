@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Ground
+  - Bullet
+  - Enemy
+  - Grenade
+  - Boss
+  - Canvas
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Enemy
+    uniqueID: 3419615229
+    locked: 0
+  - name: Bullet
+    uniqueID: 3645516639
+    locked: 0
+  - name: bomb
+    uniqueID: 1671919789
+    locked: 0
+  - name: Hostage
+    uniqueID: 2314544851
+    locked: 0
+  - name: Car
+    uniqueID: 624382067
+    locked: 0
+  - name: Boss
+    uniqueID: 2629941363
+    locked: 0
+  - name: player
+    uniqueID: 805491513
+    locked: 0
