@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     //近战攻击距离
-    private float dis = 2.5f;
+    private readonly float dis = 2.5f;
 
     //
     private GameObject[] GetCanAttackTargets(float dis)

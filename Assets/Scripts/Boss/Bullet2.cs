@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet2 : MonoBehaviour
 {
-    private float speed = 1.5f;
+    private readonly float speed = 1.5f;
     GameObject player;
 
     //子弹方向

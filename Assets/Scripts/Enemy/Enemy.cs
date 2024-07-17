@@ -5,11 +5,11 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     //最大生命值
-    private int maxHealth = 2;
+    private readonly int maxHealth = 2;
     private int curHealth;
 
     //获取敌人动画状态机
-    private Animator animator;
+    private readonly Animator animator;
 
     //通过enemyAnim脚本控制
     private EnemyAnim enemyAnim;
@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
     private float timer = 0;
 
     //设置攻击间隔 1s
-    private float attackTime = 1f;
+    private readonly float attackTime = 1f;
 
 
     // Start is called before the first frame update

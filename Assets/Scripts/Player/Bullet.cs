@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     private readonly int damage = 1;   //子弹伤害
 
-    private float speed = 6f;
+    private readonly float speed = 6f;
 
     private Rigidbody2D rd;
 

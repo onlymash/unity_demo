@@ -10,7 +10,7 @@ public enum Dir
 
 public class Player : MonoBehaviour
 {
-    private float speed = 300f;
+    private readonly float speed = 300f;
     //刚体
     private Rigidbody2D rd;
     public PlayerAnim playerAnim;

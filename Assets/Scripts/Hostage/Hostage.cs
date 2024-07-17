@@ -16,7 +16,7 @@ public class Hostage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
             animator.SetTrigger("released");
         }
@@ -24,7 +24,6 @@ public class Hostage : MonoBehaviour
 
     public void Move()
     {
-        //���ø����ٶ�
         rigidbody2D.velocity = new Vector2(-2, 0);
 
     }

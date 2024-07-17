@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Boss : MonoBehaviour
 {
-    private int maxHealth = 6;
+    private readonly int maxHealth = 6;
     private int curHealth;
 
     public bool isDie = false;
@@ -21,7 +21,7 @@ public class Boss : MonoBehaviour
 
     //计时
     private float timer = 0f;
-    private float coolTime = 2f;
+    private readonly float coolTime = 2f;
 
     //子弹预制体
     public GameObject Boom;
