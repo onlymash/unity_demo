@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private int damage = 1;   //×Óµ¯ÉËº¦
+    private int damage = 1;   //å­å¼¹ä¼¤å®³
 
     private float speed = 6f;
 
@@ -12,13 +12,13 @@ public class Bullet : MonoBehaviour
 
     private void Awake()
     {
-        rd = GetComponent<Rigidbody2D>();  //»ñÈ¡×Óµ¯ÉÏµÄRigidbody2D×é¼ş
+        rd = GetComponent<Rigidbody2D>();  //è·å–å­å¼¹ä¸Šçš„Rigidbody2Dç»„ä»¶
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        GameObject.Destroy(gameObject, 5f);     //Ã¿¸ö5Ãë×Ô¶¯Ïú»Ù
+        GameObject.Destroy(gameObject, 5f);     //æ¯ä¸ª5ç§’è‡ªåŠ¨é”€æ¯
     }
 
     public void InitDir(Dir dir)
@@ -30,12 +30,12 @@ public class Bullet : MonoBehaviour
             case Dir.Up:
                 transform.rotation = Quaternion.Euler(0, 0, -90);
                 v2 = new Vector2(0, speed);
-                rd.velocity = v2;       //¸ÕÌåËÙ¶È
+                rd.velocity = v2;       //åˆšä½“é€Ÿåº¦
                 break;
             case Dir.Forward:
-                //»ñÈ¡ÈËÎïÎ»ÖÃ
+                //è·å–äººç‰©ä½ç½®
                 Transform player = GameObject.FindGameObjectWithTag("Player").transform;
-                //ÈËÎïÍùÓÒ×ß
+                //äººç‰©å¾€å³èµ°
                 if (player.rotation.y == 0)
                 {
                     v2 = new Vector2(speed, 0);
@@ -46,7 +46,7 @@ public class Bullet : MonoBehaviour
                     v2 = new Vector2(-speed, 0);
                     transform.rotation = Quaternion.Euler(0, 0, 0);
                 }
-                rd.velocity = v2;       //¸ÕÌåËÙ¶È
+                rd.velocity = v2;       //åˆšä½“é€Ÿåº¦
                 break;
         }
     }

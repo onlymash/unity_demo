@@ -36,7 +36,7 @@ public class LoadPlay : MonoBehaviour
     public void LoadScene()
     {
         SoundManege.Instance.StopMusic();
-        SceneManager.LoadScene(1);  //加载到第二个场景
+        SceneManager.LoadScene(1);  //鍔犺浇鍒扮浜屼釜鍦烘櫙
     }
 
 

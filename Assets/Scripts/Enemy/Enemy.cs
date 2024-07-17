@@ -4,30 +4,30 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    //×î´óÉúÃüÖµ
+    //æœ€å¤§ç”Ÿå‘½å€¼
     private int maxHealth = 2;
     private int curHealth;
 
-    //»ñÈ¡µĞÈË¶¯»­×´Ì¬»ú
+    //è·å–æ•ŒäººåŠ¨ç”»çŠ¶æ€æœº
     private Animator animator;
 
-    //Í¨¹ıenemyAnim½Å±¾¿ØÖÆ
+    //é€šè¿‡enemyAnimè„šæœ¬æ§åˆ¶
     private EnemyAnim enemyAnim;
 
-    //ÓëÍæ¼Ò¾àÀë´óÓÚ6Ê±£¬²¥·ÅÕ¾Á¢¶¯»­
+    //ä¸ç©å®¶è·ç¦»å¤§äº6æ—¶ï¼Œæ’­æ”¾ç«™ç«‹åŠ¨ç”»
     public float idleDis = 6f;
 
-    //ÓëÍæ¼Ò¾àÀëÔÚ¡¾2£¬6¡¿Ö®¼ä²¥·ÅĞĞ×ß¶¯»­
+    //ä¸ç©å®¶è·ç¦»åœ¨ã€2ï¼Œ6ã€‘ä¹‹é—´æ’­æ”¾è¡Œèµ°åŠ¨ç”»
     public float walkdis = 2f;
 
     public bool canAttack = true;
-    //false ±íÊ¾Î´ËÀÍö
+    //false è¡¨ç¤ºæœªæ­»äº¡
     public bool isDie = false;
 
-    //ÉèÖÃµĞÈË¹¥»÷Ê±¼ä
+    //è®¾ç½®æ•Œäººæ”»å‡»æ—¶é—´
     private float timer = 0;
 
-    //ÉèÖÃ¹¥»÷¼ä¸ô 1s
+    //è®¾ç½®æ”»å‡»é—´éš” 1s
     private float attackTime = 1f;
 
 
@@ -89,20 +89,20 @@ public class Enemy : MonoBehaviour
             {
                 r.y = 180;
             }
-            //ĞŞ¸ÄµĞÈË½Ç¶È
+            //ä¿®æ”¹æ•Œäººè§’åº¦
             transform.rotation = Quaternion.Euler(r);
 
             if (Mathf.Abs(player.position.x - transform.position.x) > idleDis)
             {
-                return false;   //µĞÈË²»ÔÙÑ²Âß
+                return false;   //æ•Œäººä¸å†å·¡é€»
             }
             else if(Mathf.Abs(player.position.x - transform.position.x) < walkdis)
             {
-                return false;   //µĞÈË¿ªÊ¼¹¥»÷
+                return false;   //æ•Œäººå¼€å§‹æ”»å‡»
             }
             else if (isDie==false)
             {
-                //µĞÈËÃ»ÓĞËÀÍö£¬ÏòÍæ¼ÒÒÆ¶¯
+                //æ•Œäººæ²¡æœ‰æ­»äº¡ï¼Œå‘ç©å®¶ç§»åŠ¨
                 transform.position = Vector2.MoveTowards(transform.position, player.position, Time.deltaTime);
             }
             return true;

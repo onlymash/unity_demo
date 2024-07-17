@@ -16,24 +16,24 @@ public class Boom : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")  //ÓëÍæ¼ÒÅö×²¼ì²â
+        if (collision.tag == "Player")  //ä¸ç©å®¶ç¢°æ’æ£€æµ‹
         {
             if (collision.GetComponent<Player>().GetCurState() == false)
             {
                 return;
             }
             collision.GetComponent<Player>().Hurt();
-            //Åö×²µ½µØÃæ£¬ÖØÁ¦ÉèÎª0
+            //ç¢°æ’åˆ°åœ°é¢ï¼Œé‡åŠ›è®¾ä¸º0
             GetComponent<Rigidbody2D>().gravityScale = 0f;
-            //ÉèÖÃËÙ¶È
+            //è®¾ç½®é€Ÿåº¦
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             animator.SetBool("Boom", true);
         }
         if (collision.tag == "Ground")
         {
-            //Åö×²µ½µØÃæ£¬ÖØÁ¦ÉèÎª0
+            //ç¢°æ’åˆ°åœ°é¢ï¼Œé‡åŠ›è®¾ä¸º0
             GetComponent<Rigidbody2D>().gravityScale = 0f;
-            //ÉèÖÃËÙ¶È
+            //è®¾ç½®é€Ÿåº¦
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             animator.SetBool("Boom", true);
         }

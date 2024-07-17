@@ -48,7 +48,7 @@ public class GameUI : MonoBehaviour
     {
         SoundManege.Instance.PlayerMusicName("Mission Complete");
         yield return new WaitForSeconds(3.5f);
-        //¼ÓÔØ½çÃæ ²ÎÊıÊÇ³¡¾°±àºÅ
+        //åŠ è½½ç•Œé¢ å‚æ•°æ˜¯åœºæ™¯ç¼–å·
         SceneManager.LoadScene(0);
     }
 }

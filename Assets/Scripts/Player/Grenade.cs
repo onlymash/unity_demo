@@ -8,12 +8,12 @@ public class Grenade : MonoBehaviour
 
     private Animator anim;
 
-    //ÅĞ¶ÏÊÇ·ñ·¢Éú½Ó´¥£¬falseÊÇÎ´·¢Éú½Ó´¥
+    //åˆ¤æ–­æ˜¯å¦å‘ç”Ÿæ¥è§¦ï¼Œfalseæ˜¯æœªå‘ç”Ÿæ¥è§¦
     private bool isTouched = false;
     // Start is called before the first frame update
     void Start()
     {
-        //»ñÈ¡ÊÖÁñµ¯µÄRigidbody2D
+        //è·å–æ‰‹æ¦´å¼¹çš„Rigidbody2D
         rigidbody2D = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         Init();
@@ -21,7 +21,7 @@ public class Grenade : MonoBehaviour
 
     private void Update()
     {
-        //ÈÃÕ¨µ¯ÈÆ×Ô¼ºĞı×ª
+        //è®©ç‚¸å¼¹ç»•è‡ªå·±æ—‹è½¬
         if (isTouched == false)
         {
             rigidbody2D.transform.Rotate(new Vector3(0, 0, 1), Space.Self);
@@ -30,22 +30,22 @@ public class Grenade : MonoBehaviour
 
     private void Init()
     {
-        //Òş²ØÕ¨µ¯¶¯»­
+        //éšè—ç‚¸å¼¹åŠ¨ç”»
         anim.enabled = false;
-        //Í¨¹ı±êÇ©²éÕÒÍæ¼Ò
+        //é€šè¿‡æ ‡ç­¾æŸ¥æ‰¾ç©å®¶
         Transform player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        if (player.rotation.y == 0)  //Íæ¼Ò³¯ÏòÓÒ
+        if (player.rotation.y == 0)  //ç©å®¶æœå‘å³
         {
-            rigidbody2D.AddForce(new Vector2(200f, 300f));//Ìí¼ÓÒ»¸öÁ¦
+            rigidbody2D.AddForce(new Vector2(200f, 300f));//æ·»åŠ ä¸€ä¸ªåŠ›
         }
-        else        //Íæ¼Ò³¯Ïò×ó
+        else        //ç©å®¶æœå‘å·¦
         {
             rigidbody2D.AddForce(new Vector2(-200f, 300f));
         }
     }
 
-    //´¥·¢¼ì²â
+    //è§¦å‘æ£€æµ‹
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Enemy")
@@ -56,17 +56,17 @@ public class Grenade : MonoBehaviour
         {
             collision.GetComponent<Boss>().Hurt();
         }
-        //½Ó´¥µ½ÎïÌå
+        //æ¥è§¦åˆ°ç‰©ä½“
         isTouched = true;
-        //½«Õ¨µ¯ËÙ¶ÈÉèÖÃÎª0
+        //å°†ç‚¸å¼¹é€Ÿåº¦è®¾ç½®ä¸º0
         rigidbody2D.velocity = Vector2.zero;
-        //µ÷ÕûÕ¨µ¯²¥·Å½Ç¶È
+        //è°ƒæ•´ç‚¸å¼¹æ’­æ”¾è§’åº¦
         rigidbody2D.transform.rotation = Quaternion.Euler(0, 0, 0);
-        //ÉèÖÃÖØÁ¦´óĞ¡
+        //è®¾ç½®é‡åŠ›å¤§å°
         gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
-        //²¥·¢±¬Õ¨¶¯»­
+        //æ’­å‘çˆ†ç‚¸åŠ¨ç”»
         anim.enabled = true;
-        //²¥·ÅÒôÀÖ
+        //æ’­æ”¾éŸ³ä¹
         SoundManege.Instance.PlayerMusicName("GrenadeExplosion");
     }
 

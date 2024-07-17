@@ -8,7 +8,7 @@ public class SoundManege : MonoBehaviour
 
     public static SoundManege Instance;
 
-    private AudioSource audioSource;    //ÓÃÓÚ²¥·ÅÉùÒô
+    private AudioSource audioSource;    //ç”¨äºæ’­æ”¾å£°éŸ³
 
 
     private void Awake()
@@ -19,19 +19,19 @@ public class SoundManege : MonoBehaviour
     void Start()
     {
         audioSource = gameObject.AddComponent<AudioSource>();
-        //²»»á¿ªÊ¼Ê±×Ô¶¯²¥·Å
+        //ä¸ä¼šå¼€å§‹æ—¶è‡ªåŠ¨æ’­æ”¾
         audioSource.playOnAwake = false;
     }
 
     private void PlayerAudio(AudioClip ac)
     {
-        AudioSource.PlayClipAtPoint(ac, Camera.main.transform.position);            //ÔÚÖ÷ÉãÏñ»úµÄÎ»ÖÃ²¥·Å
+        AudioSource.PlayClipAtPoint(ac, Camera.main.transform.position);            //åœ¨ä¸»æ‘„åƒæœºçš„ä½ç½®æ’­æ”¾
 
     }
 
     public void PlayerMusicName(string name)
     {
-        //²¥·ÅÊ²Ã´ÒôÀÖ
+        //æ’­æ”¾ä»€ä¹ˆéŸ³ä¹
         string path = "Sounds/" + name;
         AudioClip clip = Resources.Load<AudioClip>(path);
         PlayerAudio(clip);

@@ -14,16 +14,16 @@ public class Boss : MonoBehaviour
 
     public GameUI gameui;
     //private GameUI gameui;
-    //·É»ú¶¯»­
+    //é£æœºåŠ¨ç”»
     private Animator animator;
 
     public Transform[] tr;
 
-    //¼ÆÊ±
+    //è®¡æ—¶
     private float timer = 0f;
     private float coolTime = 2f;
 
-    //×Óµ¯Ô¤ÖÆÌå
+    //å­å¼¹é¢„åˆ¶ä½“
     public GameObject Boom;
 
     public GameObject bossBullet;
@@ -32,7 +32,7 @@ public class Boss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SoundManege.Instance.PlayerMusicName("bossÕ½");
+        SoundManege.Instance.PlayerMusicName("bossæˆ˜");
         curHealth = maxHealth;
         animator = GetComponent<Animator>();
         
@@ -50,7 +50,7 @@ public class Boss : MonoBehaviour
         {
             return;
         }
-        if (!Move())  //bossÃ»ÓĞÒÆ¶¯
+        if (!Move())  //bossæ²¡æœ‰ç§»åŠ¨
         {
             Attack();
         }
@@ -84,7 +84,7 @@ public class Boss : MonoBehaviour
         gameui.ShowWin();
         GameObject.Destroy(gameObject);
         SoundManege.Instance.StopMusic();
-        SceneManager.LoadScene(0);  //¼ÓÔØµ½µÚ1¸ö³¡¾°
+        SceneManager.LoadScene(0);  //åŠ è½½åˆ°ç¬¬1ä¸ªåœºæ™¯
     }
 
     public void Skill1()
@@ -92,7 +92,7 @@ public class Boss : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= coolTime)
         {
-            //Éú³ÉÕ¨µ¯Ô¤ÖÆÌå
+            //ç”Ÿæˆç‚¸å¼¹é¢„åˆ¶ä½“
             GameObject.Instantiate(Boom, tr[0].position, Quaternion.identity);
             GameObject.Instantiate(Boom, tr[1].position, Quaternion.identity);
             timer = 0;
@@ -104,7 +104,7 @@ public class Boss : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= coolTime)
         {
-            //Éú³ÉÕ¨µ¯Ô¤ÖÆÌå
+            //ç”Ÿæˆç‚¸å¼¹é¢„åˆ¶ä½“
             GameObject.Instantiate(bossBullet, tr[2].position, Quaternion.identity);
             GameObject.Instantiate(bossBullet, tr[3].position, Quaternion.identity);
             timer = 0;
@@ -116,7 +116,7 @@ public class Boss : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= coolTime)
         {
-            //Éú³ÉÕ¨µ¯Ô¤ÖÆÌå
+            //ç”Ÿæˆç‚¸å¼¹é¢„åˆ¶ä½“
             GameObject.Instantiate(bullet2, tr[2].position, Quaternion.identity);
             GameObject.Instantiate(bullet2, tr[3].position, Quaternion.identity);
             timer = 0;

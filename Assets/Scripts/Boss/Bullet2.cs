@@ -7,13 +7,13 @@ public class Bullet2 : MonoBehaviour
     private float speed = 1.5f;
     GameObject player;
 
-    //×Óµ¯·½Ïò
+    //å­å¼¹æ–¹å‘
     public Vector3 dir;
     
-    //Îª×Óµ¯Ìí¼Ó´¥·¢Æ÷£¬Åö×²¼ì²â
+    //ä¸ºå­å¼¹æ·»åŠ è§¦å‘å™¨ï¼Œç¢°æ’æ£€æµ‹
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")  //ÓëÍæ¼ÒÅö×²¼ì²â
+        if (collision.tag == "Player")  //ä¸ç©å®¶ç¢°æ’æ£€æµ‹
         {
             if (collision.GetComponent<Player>().GetCurState() == false)
             {
@@ -28,7 +28,7 @@ public class Bullet2 : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         //use Object.Destroy instead
-        GameObject.DestroyObject(gameObject, 2.3f);
+        GameObject.Destroy(gameObject, 2.3f);
         dir = player.transform.position - transform.position;
     }
 

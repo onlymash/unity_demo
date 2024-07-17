@@ -8,6 +8,7 @@ public class Bullet1 : MonoBehaviour
     GameObject player;
 
     // Start is called before the first frame update
+    [System.Obsolete]
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -21,15 +22,15 @@ public class Bullet1 : MonoBehaviour
         if (player != null)
         {
             dir = player.transform.position - transform.position;
-            //×·ÖÕµ¯ÉèÖÃ
+            //è¿½ç»ˆå¼¹è®¾ç½®
             transform.position += speed * dir * Time.deltaTime;
         }
     }
     
-    //Îª×Óµ¯Ìí¼Ó´¥·¢Æ÷£¬Åö×²¼ì²â
+    //ä¸ºå­å¼¹æ·»åŠ è§¦å‘å™¨ï¼Œç¢°æ’æ£€æµ‹
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")  //ÓëÍæ¼ÒÅö×²¼ì²â
+        if (collision.tag == "Player")  //ä¸ç©å®¶ç¢°æ’æ£€æµ‹
         {
             if (collision.GetComponent<Player>().GetCurState() == false)
             {

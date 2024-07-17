@@ -11,39 +11,39 @@ public enum Dir
 public class Player : MonoBehaviour
 {
     private float speed = 300f;
-    //¸ÕÌå
+    //åˆšä½“
     private Rigidbody2D rd;
     public PlayerAnim playerAnim;
 
-    //Ä¬ÈÏÔÚµØÃæÉÏ
+    //é»˜è®¤åœ¨åœ°é¢ä¸Š
     private bool isOnGround = true;
 
-    //ÏŞÖÆÌøÔ¾ÊıÁ¿
+    //é™åˆ¶è·³è·ƒæ•°é‡
     private int jumpNum = 2;
 
-    public Transform[] point; //0 ÏòÇ°·¢Éä    1ÏòÉÏ·¢Éä
+    public Transform[] point; //0 å‘å‰å‘å°„    1å‘ä¸Šå‘å°„
 
-    public Transform curPoint; //µ±Ç°×Óµ¯Éú³Éµã
+    public Transform curPoint; //å½“å‰å­å¼¹ç”Ÿæˆç‚¹
 
-    //Íæ¼Ò×î´óÑªÁ¿
+    //ç©å®¶æœ€å¤§è¡€é‡
     public int maxHealth = 3;
     public int curHealth;
     
-    //falseÎ´ËÀÍö
+    //falseæœªæ­»äº¡
     public bool isDead = false;
 
-    //false ±íÊ¾Íæ¼ÒÎ»´¦ÓÚÖØÉú×´Ì¬
+    //false è¡¨ç¤ºç©å®¶ä½å¤„äºé‡ç”ŸçŠ¶æ€
     public bool isResume = false;
     
-    //ÉèÖÃ¹¥»÷¼ä¸ô£¬false±íÊ¾Ã»ÓĞ¼ä¸ô
+    //è®¾ç½®æ”»å‡»é—´éš”ï¼Œfalseè¡¨ç¤ºæ²¡æœ‰é—´éš”
     public bool wait = false;
 
     private GameUI gameUI;
 
-    //¼ä¸ô¹¥»÷µÄ¼ÆÊ±Æ÷
+    //é—´éš”æ”»å‡»çš„è®¡æ—¶å™¨
     private float timer = 0;
 
-    //¶¨Òå½üÕ½¹¥»÷Àà
+    //å®šä¹‰è¿‘æˆ˜æ”»å‡»ç±»
     private PlayerAttack playerAttack;
     // Start is called before the first frame update
     void Start()
@@ -103,10 +103,10 @@ public class Player : MonoBehaviour
     {
         if (isOnGround==false)
         {
-            return;  //ÈËÎï²»ÔÙµØÉÏ£¬Ôò²»¿ÉÒÔ½øĞĞ×óÓÒÒÆ¶¯
+            return;  //äººç‰©ä¸å†åœ°ä¸Šï¼Œåˆ™ä¸å¯ä»¥è¿›è¡Œå·¦å³ç§»åŠ¨
         }
 
-        float h = Input.GetAxis("Horizontal");  //»ñÈ¡A D ¼ü²Ù×÷
+        float h = Input.GetAxis("Horizontal");  //è·å–A D é”®æ“ä½œ
         if (h > 0)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -130,17 +130,17 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.K) && jumpNum > 0)
         {
-            isOnGround = false;  //²»ÔÙµØÉÏ
+            isOnGround = false;  //ä¸å†åœ°ä¸Š
             jumpNum--;
-            rd.AddForce(Vector2.up*250F); //¸øÎïÌåÌí¼ÓÏòÉÏµÄÁ¦
+            rd.AddForce(Vector2.up*250F); //ç»™ç‰©ä½“æ·»åŠ å‘ä¸Šçš„åŠ›
             playerAnim.PlayJumpAnim();
         }
     }
 
-    //»ñÈ¡ÏµÍ³Åö×²ÌåµÄ×é¼ş
+    //è·å–ç³»ç»Ÿç¢°æ’ä½“çš„ç»„ä»¶
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.tag == "Ground") //½Ó´¥Åö×²Ìå£¬×´Ì¬ÖØÖÃ
+        if (collision.transform.tag == "Ground") //æ¥è§¦ç¢°æ’ä½“ï¼ŒçŠ¶æ€é‡ç½®
         {
             isOnGround = true;
             jumpNum = 2;
@@ -149,25 +149,25 @@ public class Player : MonoBehaviour
 
     public void Fire(Dir dir)
     {
-        //²¥·ÅÏàÓ¦µÄÒôÀÖ
+        //æ’­æ”¾ç›¸åº”çš„éŸ³ä¹
         SoundManege.Instance.PlayerMusicName("shoot");
 
 
-        GameObject temp = Resources.Load<GameObject>("Prefabs/Bullet");  //¼ÓÔØResourcesµÄPrefabs/BulletÏÂ×Óµ¯Ô¤ÖÆÌå
+        GameObject temp = Resources.Load<GameObject>("Prefabs/Bullet");  //åŠ è½½Resourcesçš„Prefabs/Bulletä¸‹å­å¼¹é¢„åˆ¶ä½“
 
         switch (dir)
         {
             case Dir.Forward:
-                curPoint = point[0];    //0 ÏòÇ°·¢Éä
+                curPoint = point[0];    //0 å‘å‰å‘å°„
                 break;
             case Dir.Up:
-                curPoint = point[1];    //1ÏòÉÏ·¢Éä
+                curPoint = point[1];    //1å‘ä¸Šå‘å°„
                 break;
         }
-        //Éú³ÉÏàÓ¦µÄÎïÌå
+        //ç”Ÿæˆç›¸åº”çš„ç‰©ä½“
         GameObject GO = Instantiate(temp, curPoint.transform.position, Quaternion.identity);
 
-        //³õÊ¼»¯×Óµ¯·½Ïò
+        //åˆå§‹åŒ–å­å¼¹æ–¹å‘
         GO.GetComponent<Bullet>().InitDir(dir);
     }
 
@@ -194,13 +194,13 @@ public class Player : MonoBehaviour
         else
         {
             isResume = true;
-            StartCoroutine(Resume());           //¿ªÆôĞ­³Ì
+            StartCoroutine(Resume());           //å¼€å¯åç¨‹
         }
     }
 
     public IEnumerator Resume()
     {
-        yield return new WaitForSeconds(1);  //µÈ´ıÒ»ÃëÖÓ
+        yield return new WaitForSeconds(1);  //ç­‰å¾…ä¸€ç§’é’Ÿ
         playerAnim.PlayResumeAnim();
 
         transform.position = new Vector3(transform.position.x - 3f, transform.position.y + 5f);

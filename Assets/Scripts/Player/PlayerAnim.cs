@@ -46,12 +46,12 @@ public class PlayerAnim : MonoBehaviour
     }
     public void PlayDieAnim()
     {
-        animators[0].gameObject.SetActive(false);   //ÉÏ°ëÉíÒş²Ø
-        animators[1].gameObject.SetActive(false);   //ÏÂ°ëÉíÒş²Ø
+        animators[0].gameObject.SetActive(false);   //ä¸ŠåŠèº«éšè—
+        animators[1].gameObject.SetActive(false);   //ä¸‹åŠèº«éšè—
         animators[1].SetTrigger("Die");
-        //Ïú»ÙÖ÷½Ç todo
+        //é”€æ¯ä¸»è§’ todo
     }
-    public void PlayResumeAnim()        //¸´»î¶¯»­
+    public void PlayResumeAnim()        //å¤æ´»åŠ¨ç”»
     {
         animators[0].gameObject.SetActive(true); 
         animators[1].gameObject.SetActive(true);

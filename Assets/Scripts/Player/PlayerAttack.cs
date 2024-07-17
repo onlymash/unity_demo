@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    //½üÕ½¹¥»÷¾àÀë
+    //è¿‘æˆ˜æ”»å‡»è·ç¦»
     private float dis = 2.5f;
 
     //

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour
 {
-    //»ñÈ¡Íæ¼ÒÎ»ÖÃ
+    //è·å–ç©å®¶ä½ç½®
     private Transform target;
 
     // Start is called before the first frame update
@@ -17,7 +17,7 @@ public class CameraMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //target==nullÔòÖ¤Ã÷Íæ¼ÒËÀÍö
+        //target==nullåˆ™è¯æ˜ç©å®¶æ­»äº¡
         if (target != null)
         {
             float offset_x = target.position.x - transform.position.x;
@@ -26,7 +26,7 @@ public class CameraMove : MonoBehaviour
                 if (offset_x > 4f && transform.position.x <= 27.57f && transform.position.x >= 5.51f)
                 {
                     Debug.Log("1");
-                    //ÉãÏñ»úÒÆ¶¯£¬Lerp·µ»Ø½á¹û:Interpolated value, equals to a + (b - a) * t.
+                    //æ‘„åƒæœºç§»åŠ¨ï¼ŒLerpè¿”å›ç»“æœ:Interpolated value, equals to a + (b - a) * t.
                     transform.position = Vector3.Lerp(transform.position,
                         new Vector3(transform.position.x + 10, -0.39f, transform.position.z),
                         Time.deltaTime);
@@ -34,7 +34,7 @@ public class CameraMove : MonoBehaviour
                 else if (offset_x > 4f && transform.position.x >= 27.57f && transform.position.x < 39f)
                 {
                     Debug.Log("2");
-                    //ÉãÏñ»úÒÆ¶¯£¬Lerp·µ»Ø½á¹û:Interpolated value, equals to a + (b - a) * t.
+                    //æ‘„åƒæœºç§»åŠ¨ï¼ŒLerpè¿”å›ç»“æœ:Interpolated value, equals to a + (b - a) * t.
                     transform.position = Vector3.Lerp(transform.position,
                         new Vector3(transform.position.x+10, 2.35f, transform.position.z),
                         Time.deltaTime);
@@ -51,7 +51,7 @@ public class CameraMove : MonoBehaviour
             {
                 if(offset_x < -4f && transform.position.x >= 27.57f && transform.position.y> -0.39f)
                 {
-                    //ÉãÏñ»úÒÆ¶¯£¬Lerp·µ»Ø½á¹û:Interpolated value, equals to a + (b - a) * t.
+                    //æ‘„åƒæœºç§»åŠ¨ï¼ŒLerpè¿”å›ç»“æœ:Interpolated value, equals to a + (b - a) * t.
                     transform.position = Vector3.Lerp(transform.position,
                         new Vector3(transform.position.x-1, -0.61f, transform.position.z),
                         Time.deltaTime);
@@ -59,7 +59,7 @@ public class CameraMove : MonoBehaviour
                 if (offset_x < -4f && transform.position.x <= 27.57f && transform.position.x >= 6f)
                 {
                     Debug.Log("11");
-                    //ÉãÏñ»úÒÆ¶¯£¬Lerp·µ»Ø½á¹û:Interpolated value, equals to a + (b - a) * t.
+                    //æ‘„åƒæœºç§»åŠ¨ï¼ŒLerpè¿”å›ç»“æœ:Interpolated value, equals to a + (b - a) * t.
                     transform.position = Vector3.Lerp(transform.position,
                         new Vector3(0, -0.39f, transform.position.z),
                         Time.deltaTime);
@@ -67,7 +67,7 @@ public class CameraMove : MonoBehaviour
                 else if (offset_x < -4f && transform.position.x > 27.57f && transform.position.x < 39f)
                 {
                     Debug.Log("22");
-                    //ÉãÏñ»úÒÆ¶¯£¬Lerp·µ»Ø½á¹û:Interpolated value, equals to a + (b - a) * t.
+                    //æ‘„åƒæœºç§»åŠ¨ï¼ŒLerpè¿”å›ç»“æœ:Interpolated value, equals to a + (b - a) * t.
                     transform.position = Vector3.Lerp(transform.position,
                         new Vector3(transform.position.x - 10, transform.position.y, transform.position.z),
                         Time.deltaTime);
