@@ -5,7 +5,7 @@ using UnityEngine;
 public class Hostage : MonoBehaviour
 {
     private Animator animator;
-    private Rigidbody2D rigidbody2D;
+    private new Rigidbody2D rigidbody2D;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +24,7 @@ public class Hostage : MonoBehaviour
 
     public void Move()
     {
-        //ÉèÖÃ¸ÕÌåËÙ¶È
+        //ï¿½ï¿½ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½
         rigidbody2D.velocity = new Vector2(-2, 0);
 
     }

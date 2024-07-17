@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private int damage = 1;   //子弹伤害
+    private readonly int damage = 1;   //子弹伤害
 
     private float speed = 6f;
 
@@ -53,12 +53,12 @@ public class Bullet : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy")
+        if (collision.CompareTag("Enemy"))
         {
             collision.GetComponent<Enemy>().Hurt();
             Destroy(gameObject);
         }
-        if (collision.tag == "Boss")
+        if (collision.CompareTag("Boss"))
         {
             collision.GetComponent<Boss>().Hurt();
             Destroy(gameObject);
